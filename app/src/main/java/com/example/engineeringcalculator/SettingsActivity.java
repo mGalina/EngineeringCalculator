@@ -1,6 +1,7 @@
 package com.example.engineeringcalculator;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -34,7 +35,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_settings);
 
-        int permissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permissionStatus = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);//тут должно быть MainActivity
         if (permissionStatus == PackageManager.PERMISSION_GRANTED) {
             LoadImg();
         } else {
@@ -67,7 +68,7 @@ public class SettingsActivity extends AppCompatActivity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 LoadImg();
             } else {
-                Toast.makeText(SettingsActivity.this, "фаил не выбран", Toast.LENGTH_LONG).show();
+                Toast.makeText(SettingsActivity.this, "файл не выбран", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -79,7 +80,9 @@ public class SettingsActivity extends AppCompatActivity {
         mSaveImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                isExternalStorageReadable();
+                //тут должен быть какой-то метод.
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
     }
