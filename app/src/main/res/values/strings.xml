@@ -49,4 +49,8 @@
     <string name="_3nx">³√x</string>
     <string name="ynx">y√x</string>
     <string name="pi">π</string>
+    <string name="settings">Настройки</string>
+    <string name="exit">Выход</string>
+    <string name="ok">Ok</string>
+    <string name="input_image">Введите название файла</string>
 </resources>
