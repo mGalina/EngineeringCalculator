@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_settings:
                 Toast.makeText(MainActivity.this, R.string.settings, Toast.LENGTH_LONG).show();
                 Intent intentSetting = new Intent(getApplicationContext(), SettingsActivity.class);
-                startActivity(intentSetting);
+                startActivityForResult(intentSetting, GET_IMAGE_REQUEST_CODE);
                 return true;
             case R.id.action_exit:
                 finish();
